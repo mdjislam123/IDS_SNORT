@@ -18,12 +18,12 @@ In this case, I set up my IP 192.168.1.103/16.
 Now, let's see what is included in the snort application. In Ubuntu, snort has been installed in the root. You can find the folder by typing 
 •	cd /etc/snort
 
-![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/SNORT-PART%201.pdf)
+![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/Screenshot%201.png)
  
 We can see files and folders in the snort folder, but the first file I want to look at is in the "rules" folder. Go to the rules folder by typing,
 •	cd rules
 
-![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/SNORT-PART%202.pdf)
+![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/Screenshot%202.png)
  
 By opening this, you will see a lot of files with extensions in the .rules name. These .rules files contain the detection rules for identifying and responding to specific network traffic patterns or behaviors. These rules are written in Snort's rule language and play a crucial role in Snort's intrusion detection and prevention capabilities.
 Each .rules file typically focuses on a specific aspect of network traffic or a particular protocol, containing rules tailored to detect and respond to behaviors or characteristics associated with that protocol or category of network activity.
@@ -72,12 +72,12 @@ Now you may ask what is snort.conf?
 
 The snort.conf file in Snort serves as the core configuration file, governing the entire operation of the intrusion detection system. This critical file orchestrates Snort's behavior, dictating what network traffic to monitor, how to process it, and what actions to take upon detecting specific patterns or behaviors. Within this file, settings encompass a range of crucial parameters: defining the network interfaces to watch, configuring preprocessors that handle packet preprocessing tasks, specifying the detection rules and their locations, setting up logging and alerting mechanisms, configuring output plugins for handling alerts and logs, optimizing performance through memory allocation and other tuning options, and a multitude of other configurations. The snort.conf file acts as the centralized control hub, allowing administrators to fine-tune Snort's functionality to align with their environment's specific security needs, network architecture, and threat landscape. It's a pivotal resource for tailoring Snort's ability to detect and respond to potential security threats effectively.
 
-![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/SNORT-PART%203.pdf)
+![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/Screenshot%203.png)
 
 
 If you successfully saved the rules in the local.rules file, and snort’s configuration file successfully saved the configuration. You will see this message bellow – 
 
-![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/SNORT-PART%204.pdf)
+![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/Screenshot%204.png)
  
 
 After successfully saving the configuration, I will start the Snort service to start our machine firewall. To start the service, type the following command in the terminal - 
@@ -89,7 +89,7 @@ Now, I will start the Kali machine and will try to send FTP connection request f
 In my case, my IP address will be 192.168.1.103
 Here, you can see my snort rules have triggered and captured the connection request. 
 
-![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/SNORT-PART%201.pdf)
+![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/Screenshot%205.png)
  
 12/28-06:43:44.471246 [**] [1:60001:1] FTP Attempted [**] [Priority: 0] {TCP} 192.168.1.208:65476 -> 192.168.1.103:21.
 
@@ -114,7 +114,7 @@ ssh 192.168.1.103
 
 Here, you can see my snort in Ubuntu rules have triggered again and captured the connection request. 
 
-![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/SNORT-PART%201.pdf)
+![Alt Text](https://github.com/mdjislam123/IDS_SNORT/blob/Part-1/Screenshot%206.png)
 
 12/28-06:44:08.559210 [**] [1:60002:1] SSH Attempted [**] [Priority: 0] {TCP} 192.168.1.208:65491 -> 192.168.1.103:22.
 
